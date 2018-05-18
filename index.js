@@ -25,7 +25,6 @@ client.on('ready', () => {
 });
 
 client.on('message', message => {
-  const voiceChannel = message.member.voiceChannel;
   if (message.author.bot) return;
   if (message.channel.type === "dm") return;
 

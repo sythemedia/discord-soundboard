@@ -38,4 +38,16 @@ client.on('message', message => {
   if (commandfile) commandfile.run(client,message,args);
 });
 
+client.on('voiceStateUpdate', (oldMember, newMember, message) => {
+  let oldUserChannel = oldMember.voiceChannel;
+  let newUserChannel = newMember.voiceChannel;
+
+  if (oldUserChannel === undefined && newUserChannel !== undefined) {
+    console.log('User Joins a voice channel');
+
+  } else if (newUserChannel === undefined) {
+    console.log('User leaves a voice channel');
+  }
+});
+
 client.login(config.token);

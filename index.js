@@ -4,7 +4,6 @@ const config = require('./config.json');
 const fs = require('fs');
 client.commands = new Discord.Collection();
 
-
 fs.readdir('./commands/', (err, files) => {
   if (err) console.log(err);
   let jsfile = files.filter(f => f.split(".").pop() === 'js')
@@ -22,6 +21,15 @@ jsfile.forEach((files, i) => {
 
 client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}`);
+
+  function setActivity() {
+    const Gameinfo = ['Under Development', `Prefix: ${config.prefix}`, 'Repo: https://bit.ly/discordsoundboard', 'Discord: https://discord.io/chillcabin'];
+    var info = Gameinfo[Math.floor(Math.random() * Gameinfo.length)];
+
+    client.user.setActivity(info);
+    console.log(`[Console] Activity set to (${info})`);
+  }
+  setInterval(setActivity, 120000);
 });
 
 client.on('message', message => {

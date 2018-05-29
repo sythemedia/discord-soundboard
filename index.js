@@ -27,7 +27,7 @@ client.on('ready', () => {
   console.log(`${client.user.username} is online and is operating on ${client.guilds.size} ${pluralnonpluralservers} for ${client.users.size} ${pluralnonpluralusers}.`);
 
   function setActivity() {
-    const Gameinfo = ['Someone kill me please', 'I want to die', 'End my life'];
+    const Gameinfo = ['Someone kill me please', 'I want to die', 'End my life', 'Source: https://bit.ly/discordsoundboard'];
     var info = Gameinfo[Math.floor(Math.random() * Gameinfo.length)];
 
     client.user.setActivity(info);
@@ -51,4 +51,5 @@ client.on('message', message => {
   if (commandfile) commandfile.run(client,message,args);
 });
 
-client.login(process.env.BOT_TOKEN);
+//client.login(process.env.BOT_TOKEN);
+client.login(config.token);

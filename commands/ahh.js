@@ -7,7 +7,7 @@ module.exports.run = async (client, message, args) => {
     message.channel.send('Lol, I am not in a voice channel...');
   } else {
     voiceChannel.join().then(connection => {
-      const dispatcher = connection.playFile('./effects/teamspeak/connected.mp3');
+      const dispatcher = connection.playFile('./effects/ahh.mp3');
 
       dispatcher.on("end", end => {
         voiceChannel.leave();
@@ -17,5 +17,5 @@ module.exports.run = async (client, message, args) => {
 };
 
 module.exports.help = {
-  name: 'join'
+  name: 'ahh'
 };

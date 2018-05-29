@@ -4,6 +4,7 @@ const config = require('./config.json');
 const fs = require('fs');
 client.commands = new Discord.Collection();
 
+// Reads all commands and boots them in
 fs.readdir('./commands/', (err, files) => {
   if (err) console.log(err);
   let jsfile = files.filter(f => f.split(".").pop() === 'js')
@@ -20,15 +21,19 @@ jsfile.forEach((files, i) => {
 });
 
 client.on('ready', () => {
-  console.log(`Logged in as ${client.user.tag}`);
+  let pluralnonpluralservers = (client.guilds.size > 1) ? 'Servers' : 'Server';
+  let pluralnonpluralusers = (client.users.size > 1) ? 'Users' : 'User';
+
+  console.log(`${client.user.username} is online and is operating on ${client.guilds.size} ${pluralnonpluralservers} for ${client.users.size} ${pluralnonpluralusers}.`);
 
   function setActivity() {
-    const Gameinfo = ['Under Development', `Prefix: ${config.prefix}`, 'Repo: https://bit.ly/discordsoundboard', 'Discord: https://discord.io/chillcabin'];
+    const Gameinfo = ['Someone kill me please', 'I want to die', 'End my life'];
     var info = Gameinfo[Math.floor(Math.random() * Gameinfo.length)];
 
     client.user.setActivity(info);
     console.log(`[Console] Activity set to (${info})`);
-  }
+  };
+
   setInterval(setActivity, 120000);
 });
 
@@ -46,16 +51,4 @@ client.on('message', message => {
   if (commandfile) commandfile.run(client,message,args);
 });
 
-client.on('voiceStateUpdate', (oldMember, newMember, message) => {
-  let oldUserChannel = oldMember.voiceChannel;
-  let newUserChannel = newMember.voiceChannel;
-
-  if (oldUserChannel === undefined && newUserChannel !== undefined) {
-    console.log('User Joins a voice channel');
-
-  } else if (newUserChannel === undefined) {
-    console.log('User leaves a voice channel');
-  }
-});
-
-client.login(process.env.BOT_TOKEN);
+client.login(config.token);

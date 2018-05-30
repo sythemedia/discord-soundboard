@@ -52,5 +52,5 @@ client.on('message', message => {
   if (commandfile) commandfile.run(client,message,args);
 });
 
-//client.login(process.env.BOT_TOKEN);
-client.login(token.token);
+client.login(process.env.BOT_TOKEN);
+//client.login(token.token);

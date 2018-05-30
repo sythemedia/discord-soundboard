@@ -1,6 +1,7 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
 const config = require('./config.json');
+const token = require('./token.json');
 const fs = require('fs');
 client.commands = new Discord.Collection();
 
@@ -27,8 +28,8 @@ client.on('ready', () => {
   console.log(`${client.user.username} is online and is operating on ${client.guilds.size} ${pluralnonpluralservers} for ${client.users.size} ${pluralnonpluralusers}.`);
 
   function setActivity() {
-    const Gameinfo = ['Someone kill me please', 'I want to die', 'End my life', 'Source: https://bit.ly/discordsoundboard'];
-    var info = Gameinfo[Math.floor(Math.random() * Gameinfo.length)];
+    const Gameinfo = ['Source: https://bit.ly/discordsoundboard', 'Play Me!', 'Developer: shadowolf#9212', 'Discord: http://discord.io/chillcabin'];
+    const info = Gameinfo[Math.floor(Math.random() * Gameinfo.length)];
 
     client.user.setActivity(info);
     console.log(`[Console] Activity set to (${info})`);
@@ -51,5 +52,5 @@ client.on('message', message => {
   if (commandfile) commandfile.run(client,message,args);
 });
 
-client.login(process.env.BOT_TOKEN);
-//client.login(token.token);
+//client.login(process.env.BOT_TOKEN);
+client.login(token.token);

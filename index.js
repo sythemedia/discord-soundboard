@@ -37,7 +37,7 @@ client.on('ready', () => {
   setInterval(setActivity, 120000);
 });
 
-client.on('reconnecting', () => {
+client.on('disconnect', () => {
   client.user.setStatus('away');
   client.user.setActivity('Reconnecting.. Pushing Patch..');
   console.log(`[Console] Reconnecting...`);

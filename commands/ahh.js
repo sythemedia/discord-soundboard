@@ -1,4 +1,5 @@
 const Discord = require('discord.js');
+const errors = require('../util/errors.js');
 
 module.exports.run = async (client, message, args) => {
 
@@ -6,7 +7,7 @@ module.exports.run = async (client, message, args) => {
     return errors.userNotInChannel(message);
   } else {
     message.member.voiceChannel.join().then(connection => {
-      console.log(`[${message.guild}] ${message.author.username} has issues the ${module.exports.help.name} command.`)
+      console.log(`[${message.guild}] ${message.author.username} has issued the ${module.exports.help.name} command.`)
       const dispatcher = connection.playFile('./effects/ahh.mp3');
 
       dispatcher.on('end', end => {

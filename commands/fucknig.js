@@ -1,16 +1,17 @@
 const Discord = require('discord.js');
+const errors = require('../util/errors.js');
 
 module.exports.run = async (client, message, args) => {
-  const voiceChannel = message.member.voiceChannel;
 
   if (!message.member.voiceChannel) {
-    message.channel.send('Lol, I am not in a voice channel...');
+    return errors.userNotInChannel(message);
   } else {
-    voiceChannel.join().then(connection => {
+    message.member.voiceChannel.join().then(connection => {
+      console.log(`[${message.guild}] ${message.author.username} has issued the ${module.exports.help.name} command.`)
       const dispatcher = connection.playFile('./effects/fucknig.mp3');
 
-      dispatcher.on("end", end => {
-        voiceChannel.leave();
+      dispatcher.on('end', end => {
+        message.member.voiceChannel.leave();
       });
     })
   }

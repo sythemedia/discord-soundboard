@@ -1,16 +1,13 @@
 const Discord = require('discord.js');
 
 module.exports.run = async (client, message, args) => {
-  const voiceChannel = message.member.voiceChannel;
-
-  if (!message.member.voiceChannel) {
-    message.channel.send('Lol, I am not in a voice channel...');
-  } else {
-    voiceChannel.join().then(connection => {
+  if (message.member.voiceChannel) {
+    message.member.voiceChannel.join().then(connection => {
+      console.log(`[${message.guild}] ${message.author} has issues the ${module.exports.help.name} command.`)
       const dispatcher = connection.playFile('./effects/ahh.mp3');
 
-      dispatcher.on("end", end => {
-        voiceChannel.leave();
+      dispatcher.on('end', end => {
+        message.member.voiceChannel.leave();
       });
     })
   }

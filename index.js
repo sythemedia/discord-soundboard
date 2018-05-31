@@ -37,19 +37,13 @@ client.on('ready', () => {
   setInterval(setActivity, 120000);
 });
 
-client.on('disconnect', () => {
-  client.user.setStatus('away');
-  client.user.setActivity('Reconnecting.. Pushing Patch..');
-  console.log(`[Console] Reconnecting...`);
-});
-
 client.on('message', message => {
   if (message.author.bot) return;
-  if (message.channel.type === "dm") return;
+  if (message.channel.type === 'dm') return;
 
   if (!message.member.voiceChannel) {
     let embed = new Discord.RichEmbed()
-    .setTitle('User is not in channel')
+    .setTitle('User is not in channel!')
     .setColor(config.red)
     .setDescription(`${message.author}, you are not not in a voice channel dummy..`);
     message.channel.send(embed);

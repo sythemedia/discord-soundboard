@@ -37,6 +37,12 @@ client.on('ready', () => {
   setInterval(setActivity, 120000);
 });
 
+client.on('reconnecting', () => {
+  client.user.setStatus('away');
+  client.user.setActivity('Reconnecting.. Pushing Patch..');
+  console.log(`[Console] Reconnecting...`);
+});
+
 client.on('message', message => {
   if (message.author.bot) return;
   if (message.channel.type === "dm") return;

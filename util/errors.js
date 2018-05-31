@@ -1,11 +1,11 @@
 const Discord = require('discord.js');
 const config = require('../config.json');
+const errors = require('../util/errors.js');
 
-module.exports.userNotInChannel = (message, perm) => {
+module.exports.userNotInChannel = (message) => {
   let embed = new Discord.RichEmbed()
-  .setTitle('An error has occurred!')
-  .setColor(config.yellow)
-  .setDescription('You need to be in a voice channel to use this.');
-
-  message.channel.send(embed).then(message => message.delete(config.errortimeout));
+  .setTitle('User is not in channel!')
+  .setColor(config.red)
+  .setDescription(`${message.author}, you are not not in a voice channel dummy..`);
+  message.channel.send(embed);
 };

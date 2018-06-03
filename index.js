@@ -27,7 +27,7 @@ client.on('ready', () => {
   console.log(`${client.user.username} is online and is operating on ${client.guilds.size} ${pluralnonpluralservers} for ${client.users.size} ${pluralnonpluralusers}.`);
 
   function setActivity() {
-    const Gameinfo = ['Source: https://bit.ly/discordsoundboard', 'Play Me!', 'Developer: shadowolf#9212', 'Discord: http://discord.io/chillcabin', 'Invite: http://bit.ly/botinvite', `Running on ${client.guilds.size} ${pluralnonpluralservers}`, `Running for ${client.users.size} ${pluralnonpluralusers}`, `Use ${config.prefix}commands for memes`, 'My Name JEFF!'];
+    const Gameinfo = ['Source: https://bit.ly/discordsoundboard', 'Play Me!', 'Developer: shadowolf#9212', 'Discord: http://bit.ly/mancavediscord', 'Invite: http://bit.ly/botinvite', `Running on ${client.guilds.size} ${pluralnonpluralservers}`, `Running for ${client.users.size} ${pluralnonpluralusers}`, `Use ${config.prefix}commands for memes`, 'My Name JEFF!'];
     const info = Gameinfo[Math.floor(Math.random() * Gameinfo.length)];
 
     client.user.setActivity(info);

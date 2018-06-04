@@ -18,4 +18,4 @@ I'm not going to explain all of the commands because I would rather leave them a
 
 ## Links
 [Discord](https://www.discord.io/chillcabin)<br>
-[Invite the bot](https://discordapp.com/oauth2/authorize?&client_id=447199644292743168&scope=bot&permissions=0)
+[Invite the bot](http://bit.ly/botinvite)

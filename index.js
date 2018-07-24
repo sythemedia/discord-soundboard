@@ -25,6 +25,7 @@ client.on('ready', () => {
   let pluralnonpluralusers = (client.users.size > 1) ? 'Users' : 'User';
 
   console.log(`${client.user.username} is online and is operating on ${client.guilds.size} ${pluralnonpluralservers} for ${client.users.size} ${pluralnonpluralusers}.`);
+  client.user.setActivity('Booting Up...');
 
   function setActivity() {
     const Gameinfo = ['Source: https://bit.ly/discordsoundboard', 'Play Me!', 'Developer: shadowolf#9212', 'Discord: http://bit.ly/mancavediscord', 'Invite: http://bit.ly/botinvite', `Running on ${client.guilds.size} ${pluralnonpluralservers}`, `Running for ${client.users.size} ${pluralnonpluralusers}`, `Use ${config.prefix}commands for memes`, 'My Name JEFF!'];

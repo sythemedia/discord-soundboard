@@ -7,7 +7,7 @@ module.exports.run = async (client, message, args) => {
 
   let embed = new Discord.RichEmbed()
   .setTitle('Commands')
-  .setThumbnail('http://www.techiwarehouse.com/userfiles/Batch%20File%20Commands.png')
+  .setThumbnail('http://chittagongit.com/images/discord-server-icon-maker/discord-server-icon-maker-14.jpg')
   .setColor('#'+(Math.random()*0xFFFFFF<<0).toString(16))
   .setDescription(`Prefix: ${config.prefix}\n\n${client.commands.map(commands => `${config.prefix}${commands.help.name}`).join('\n')}`);
   message.channel.send(embed);

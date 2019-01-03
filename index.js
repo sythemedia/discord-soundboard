@@ -28,8 +28,8 @@ client.on('ready', () => {
   client.user.setActivity('loading up');
 
   function setActivity() {
-    const Gameinfo = [ 'Play Me!', 'Developer: sythe#8952', `Running on ${client.guilds.size} ${pluralnonpluralservers}`, `Running for ${client.users.size} ${pluralnonpluralusers}`, `Use ${config.prefix}commands for memes`, 'My Name sythe!'];
-    const info = Gameinfo[Math.floor(Math.random() * Gameinfo.length)];
+    const Gameinfo = [ 'Developer: sythe#8952', `Running on ${client.guilds.size} ${pluralnonpluralservers}`, `Running for ${client.users.size} ${pluralnonpluralusers}`, `Use ${config.prefix}commands for memes`,];
+    const info = Gameinfo[Math.floor(Math.random()
 
     client.user.setActivity(info);
     console.log(`[Console] Activity set to (${info})`);

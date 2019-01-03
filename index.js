@@ -28,7 +28,7 @@ client.on('ready', () => {
   client.user.setActivity('Booting Up...');
 
   function setActivity() {
-    const Gameinfo = ['Source: https://bit.ly/discordsoundboard', 'Play Me!', 'Developer: shadowolf#9212', 'Discord: http://bit.ly/mancavediscord', 'Invite: http://bit.ly/botinvite', `Running on ${client.guilds.size} ${pluralnonpluralservers}`, `Running for ${client.users.size} ${pluralnonpluralusers}`, `Use ${config.prefix}commands for memes`, 'My Name JEFF!'];
+    const Gameinfo = [ 'Play Me!', 'Developer: sythe', `Running on ${client.guilds.size} ${pluralnonpluralservers}`, `Running for ${client.users.size} ${pluralnonpluralusers}`, `Use ${config.prefix}commands for memes`, 'My Name sythe!'];
     const info = Gameinfo[Math.floor(Math.random() * Gameinfo.length)];
 
     client.user.setActivity(info);

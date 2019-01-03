@@ -25,10 +25,10 @@ client.on('ready', () => {
   let pluralnonpluralusers = (client.users.size > 1) ? 'Users' : 'User';
 
   console.log(`${client.user.username} is online and is operating on ${client.guilds.size} ${pluralnonpluralservers} for ${client.users.size} ${pluralnonpluralusers}.`);
-  client.user.setActivity('Booting Up...');
+  client.user.setActivity('loading up');
 
   function setActivity() {
-    const Gameinfo = [ 'Play Me!', 'Developer: sythe', `Running on ${client.guilds.size} ${pluralnonpluralservers}`, `Running for ${client.users.size} ${pluralnonpluralusers}`, `Use ${config.prefix}commands for memes`, 'My Name sythe!'];
+    const Gameinfo = [ 'Play Me!', 'Developer: sythe#8952', `Running on ${client.guilds.size} ${pluralnonpluralservers}`, `Running for ${client.users.size} ${pluralnonpluralusers}`, `Use ${config.prefix}commands for memes`, 'My Name sythe!'];
     const info = Gameinfo[Math.floor(Math.random() * Gameinfo.length)];
 
     client.user.setActivity(info);
